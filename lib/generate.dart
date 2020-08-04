@@ -27,9 +27,9 @@ class _GenerateState extends State<Generate> {
       appBar: AppBar(
         title: Text(widget.title),
       ),
-      body: SingleChildScrollView(
-        padding: EdgeInsets.all(30.0),
-        child: Container(
+      body: Center(
+        child: SingleChildScrollView(
+          padding: EdgeInsets.all(30.0),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.stretch,
