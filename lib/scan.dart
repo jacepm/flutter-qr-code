@@ -1,3 +1,4 @@
+import 'package:barcode_scan/barcode_scan.dart';
 import 'package:flutter/material.dart';
 
 class Scan extends StatefulWidget {
@@ -10,6 +11,13 @@ class Scan extends StatefulWidget {
 
 class _ScanState extends State<Scan> {
   String result = 'Not yet scanned!';
+
+  void _qrCodeScanner() async {
+    String scanning = (await BarcodeScanner.scan()) as String;
+    setState(() {
+      result = scanning;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -27,15 +35,17 @@ class _ScanState extends State<Scan> {
               fontWeight: FontWeight.bold,
             ),
             _textBuilder(text: result, fontSize: 16.0),
-            SizedBox(height: 20),
+            SizedBox(height: 20.0),
             FlatButton(
               padding: EdgeInsets.all(10.0),
-              child: Text('Scan'),
+              child: Text('SCAN'),
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(20),
                 side: BorderSide(color: Colors.blue, width: 3.0),
               ),
-              onPressed: () {},
+              onPressed: () {
+                _qrCodeScanner();
+              },
             ),
           ],
         ),
