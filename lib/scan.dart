@@ -42,13 +42,8 @@ class _ScanState extends State<Scan> {
               fontSize: 16.0,
             ),
             SizedBox(height: 20.0),
-            FlatButton(
-              padding: EdgeInsets.all(10.0),
-              child: Text('SCAN'),
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(20),
-                side: BorderSide(color: Colors.blue, width: 3.0),
-              ),
+            ReusableWidgets.buttonBuilder(
+              text: 'SCAN',
               onPressed: () {
                 _qrCodeScanner();
               },
