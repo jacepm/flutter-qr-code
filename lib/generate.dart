@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:qr_code/reusable.dart';
 import 'package:qr_flutter/qr_flutter.dart';
 
 class Generate extends StatefulWidget {
@@ -35,7 +36,9 @@ class _GenerateState extends State<Generate> {
             children: <Widget>[
               QrImage(data: qrData),
               SizedBox(height: 20.0),
-              Text('Get your link/text to the QR CODE'),
+              ReusableWidgets.textBuilder(
+                text: 'Get your link/text to the QR CODE',
+              ),
               TextField(
                 controller: qrController,
                 decoration: InputDecoration(
