@@ -37,12 +37,12 @@ class _GenerateState extends State<Generate> {
               QrImage(data: qrData),
               SizedBox(height: 20.0),
               ReusableWidgets.textBuilder(
-                text: 'Get your link/text to the QR CODE',
+                text: 'Get your text to the QR CODE',
               ),
               TextField(
                 controller: qrController,
                 decoration: InputDecoration(
-                  hintText: 'Enter the link/text here..',
+                  hintText: 'Enter the text here..',
                 ),
               ),
               SizedBox(height: 20.0),
