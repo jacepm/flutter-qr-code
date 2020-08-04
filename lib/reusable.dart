@@ -12,4 +12,17 @@ class ReusableWidgets {
       textAlign: TextAlign.center,
     );
   }
+
+  static Widget buttonBuilder(
+      {@required String text, @required Function() onPressed}) {
+    return FlatButton(
+      child: Text(text),
+      padding: EdgeInsets.all(10.0),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(20),
+        side: BorderSide(color: Colors.blue, width: 3.0),
+      ),
+      onPressed: onPressed,
+    );
+  }
 }
