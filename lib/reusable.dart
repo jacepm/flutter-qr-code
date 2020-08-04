@@ -16,7 +16,12 @@ class ReusableWidgets {
   static Widget buttonBuilder(
       {@required String text, @required Function() onPressed}) {
     return FlatButton(
-      child: Text(text),
+      child: Text(
+        text,
+        style: TextStyle(
+          color: Colors.blue,
+        ),
+      ),
       padding: EdgeInsets.all(10.0),
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(20),
