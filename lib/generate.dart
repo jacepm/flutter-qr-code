@@ -42,7 +42,7 @@ class _GenerateState extends State<Generate> {
               TextField(
                 controller: qrController,
                 decoration: InputDecoration(
-                  hintText: 'Enter the text here..',
+                  hintText: 'Enter the text here...',
                 ),
               ),
               SizedBox(height: 20.0),
