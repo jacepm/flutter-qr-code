@@ -45,8 +45,14 @@ class _MyHomePageState extends State<MyHomePage> {
           children: <Widget>[
             Image.asset('images/qr-code.png'),
             SizedBox(height: 20.0),
-            _buttonBuilder('Scan QR Code', Scan()),
-            _buttonBuilder('Generate QR Code', Generate()),
+            _buttonBuilder(
+              'Scan QR Code',
+              Scan(title: 'Scan QR Code'),
+            ),
+            _buttonBuilder(
+              'Generate QR Code',
+              Generate(title: 'Generate QR Code'),
+            ),
           ],
         ),
       ),
