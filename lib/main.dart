@@ -27,7 +27,6 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -36,10 +35,30 @@ class _MyHomePageState extends State<MyHomePage> {
           child: Text(widget.title),
         ),
       ),
-      body: Center(
+      body: Container(
+        padding: EdgeInsets.all(30.0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[],
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: <Widget>[
+            Image.asset('images/qr-code.png'),
+            SizedBox(height: 20.0),
+            RaisedButton(
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(20),
+              ),
+              onPressed: () {},
+              child: Text('Scan QR Code'),
+            ),
+            SizedBox(height: 10.0),
+            RaisedButton(
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(20),
+              ),
+              onPressed: () {},
+              child: Text('Generate QR Code'),
+            ),
+          ],
         ),
       ),
     );
