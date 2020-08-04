@@ -1,5 +1,6 @@
 import 'package:barcode_scan/barcode_scan.dart';
 import 'package:flutter/material.dart';
+import 'package:qr_code/reusable.dart';
 
 class Scan extends StatefulWidget {
   Scan({Key key, this.title}) : super(key: key);
@@ -31,12 +32,15 @@ class _ScanState extends State<Scan> {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
-            _textBuilder(
+            ReusableWidgets.textBuilder(
               text: 'RESULT',
               fontSize: 24.0,
               fontWeight: FontWeight.bold,
             ),
-            _textBuilder(text: result, fontSize: 16.0),
+            ReusableWidgets.textBuilder(
+              text: result,
+              fontSize: 16.0,
+            ),
             SizedBox(height: 20.0),
             FlatButton(
               padding: EdgeInsets.all(10.0),
@@ -52,17 +56,6 @@ class _ScanState extends State<Scan> {
           ],
         ),
       ),
-    );
-  }
-
-  Widget _textBuilder({String text, double fontSize, FontWeight fontWeight}) {
-    return Text(
-      text,
-      style: TextStyle(
-        fontSize: fontSize,
-        fontWeight: fontWeight ?? FontWeight.normal,
-      ),
-      textAlign: TextAlign.center,
     );
   }
 }
