@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:qr_code/generate.dart';
+import 'package:qr_code/scan.dart';
 
 void main() {
   runApp(MyApp());
@@ -43,22 +45,26 @@ class _MyHomePageState extends State<MyHomePage> {
           children: <Widget>[
             Image.asset('images/qr-code.png'),
             SizedBox(height: 20.0),
-            _buttonBuilder('Scan QR Code'),
-            _buttonBuilder('Generate QR Code'),
+            _buttonBuilder('Scan QR Code', Scan()),
+            _buttonBuilder('Generate QR Code', Generate()),
           ],
         ),
       ),
     );
   }
 
-  Widget _buttonBuilder(String text) {
+  Widget _buttonBuilder(String text, Widget widget) {
     return FlatButton(
       padding: EdgeInsets.all(10.0),
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(20),
         side: BorderSide(color: Colors.blue, width: 3.0),
       ),
-      onPressed: () {},
+      onPressed: () {
+        Navigator.of(context).push(
+          MaterialPageRoute(builder: (context) => widget),
+        );
+      },
       child: Text(text),
     );
   }
