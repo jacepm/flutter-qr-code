@@ -43,24 +43,23 @@ class _MyHomePageState extends State<MyHomePage> {
           children: <Widget>[
             Image.asset('images/qr-code.png'),
             SizedBox(height: 20.0),
-            RaisedButton(
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(20),
-              ),
-              onPressed: () {},
-              child: Text('Scan QR Code'),
-            ),
-            SizedBox(height: 10.0),
-            RaisedButton(
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(20),
-              ),
-              onPressed: () {},
-              child: Text('Generate QR Code'),
-            ),
+            _buttonBuilder('Scan QR Code'),
+            _buttonBuilder('Generate QR Code'),
           ],
         ),
       ),
+    );
+  }
+
+  Widget _buttonBuilder(String text) {
+    return FlatButton(
+      padding: EdgeInsets.all(10.0),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(20),
+        side: BorderSide(color: Colors.blue, width: 3.0),
+      ),
+      onPressed: () {},
+      child: Text(text),
     );
   }
 }
