@@ -11,13 +11,15 @@ class Scan extends StatefulWidget {
 }
 
 class _ScanState extends State<Scan> {
-  String result = 'Not yet scanned!';
+  String qrResult = 'Not yet scanned!';
 
   void _qrCodeScanner() {
     Future.delayed(Duration.zero, () async {
       ScanResult scanning = await BarcodeScanner.scan();
       setState(() {
-        result = scanning.rawContent;
+        qrResult = scanning.rawContent != ''
+            ? scanning.rawContent
+            : qrResult;
       });
     });
   }
@@ -38,7 +40,7 @@ class _ScanState extends State<Scan> {
               fontWeight: FontWeight.bold,
             ),
             ReusableWidgets.textBuilder(
-              text: result,
+              text: qrResult,
               fontSize: 16.0,
             ),
             SizedBox(height: 20.0),
