@@ -12,10 +12,12 @@ class Scan extends StatefulWidget {
 class _ScanState extends State<Scan> {
   String result = 'Not yet scanned!';
 
-  void _qrCodeScanner() async {
-    String scanning = (await BarcodeScanner.scan()) as String;
-    setState(() {
-      result = scanning;
+  void _qrCodeScanner() {
+    Future.delayed(Duration.zero, () async {
+      ScanResult scanning = await BarcodeScanner.scan();
+      setState(() {
+        result = scanning.rawContent;
+      });
     });
   }
 
