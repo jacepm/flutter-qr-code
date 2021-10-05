@@ -15,19 +15,16 @@ class ReusableWidgets {
 
   static Widget buttonBuilder(
       {@required String text, @required Function() onPressed}) {
-    return FlatButton(
-      child: Text(
-        text,
-        style: TextStyle(
-          color: Colors.blue,
+    return TextButton(
+      style: TextButton.styleFrom(
+        textStyle: const TextStyle(fontSize: 20),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(20),
+          side: BorderSide(color: Colors.blue, width: 3.0),
         ),
       ),
-      padding: EdgeInsets.all(10.0),
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(20),
-        side: BorderSide(color: Colors.blue, width: 3.0),
-      ),
       onPressed: onPressed,
+      child: Text(text),
     );
   }
 }
